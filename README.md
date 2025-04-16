@@ -1,6 +1,6 @@
-# 🧢 Fashion Onboarding App (React Native + Expo)
+# 🧢 Fashion Clothing App (React Native + Expo)
 
-An interactive onboarding flow built with **React Native**, **Expo Router**, and **NativeWind** — designed to collect user preferences like fashion brands, price ranges, school, gender, and sizes in a sleek, modern UI.
+An interactive App built with **React Native**, **Expo Router**, and **NativeWind** — designed to collect user preferences like fashion brands in a sleek, modern UI.
 
 ---
 
@@ -28,7 +28,7 @@ cd fashion-app
 ```bash
 npm install
 # or
-yarn
+yarn install
 ```
 
 ### 3. Run the app locally
