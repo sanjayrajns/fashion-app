@@ -1,4 +1,4 @@
-# 🧢 Fashion Clothing App (React Native + Expo)
+# Stylize
 
 An interactive App built with **React Native**, **Expo Router**, and **NativeWind** — designed to collect user preferences like fashion brands in a sleek, modern UI.
 
