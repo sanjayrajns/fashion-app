@@ -28,7 +28,7 @@ export default function MeasurementsScreen() {
 
   const handleContinue = () => {
     if (isLoggedIn) {
-      router.push("/(tabs)/Home");
+      router.push("./HomeScreen");
     } else {
       router.push("/Login");
     }

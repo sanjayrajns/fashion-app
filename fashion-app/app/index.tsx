@@ -44,7 +44,7 @@ export default function OnboardingScreen() {
           Delve into fashion and personalize{"\n"}your likes with every swipe
         </Text>
         <TouchableOpacity
-          onPress={() => router.push('/GetStarted')}
+          onPress={() => router.push('/Screens/GetStarted')}
           className="bg-red-500 px-[7vh] py-4 rounded-lg mb-2 mt-[10vh]"
         >
           <Text className="text-white text-[20px] font-semibold text-base">Get Started</Text>
@@ -56,4 +56,4 @@ export default function OnboardingScreen() {
       </ScrollView>
     </SafeAreaView>
   );
-}
+}``

@@ -20,7 +20,7 @@ export default function HomeScreen() {
 
   const goNext = () => {
     if (selected.length >= 3) {
-      router.push('/(tabs)/PricePreferencesScreen');
+      router.push('/Screens/PricePreferencesScreen');
     }
   };
 

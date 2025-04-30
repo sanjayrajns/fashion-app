@@ -1,42 +1,52 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useRouter } from 'expo-router';
 
 const App = () => {
+  const router = useRouter();
+
+  const handleContinue = () => {
+    router.push("./HomeScreen");
+  };
+
   return (
     <View style={styles.container}>
-            <View>
-                <Text style={styles.title}>Create Your Account</Text>
-            </View>
-            
-      {/* Main Grid Box */}
+      <Text style={styles.title}>Create Your Account</Text>
+
       <View style={styles.cardContainer}>
         {/* Top Row */}
         <View style={styles.row}>
           <View style={styles.cardTall}><Text style={styles.cardText}>Anna</Text></View>
           <View style={styles.cardStandard}><Text style={styles.cardText}>Bella</Text></View>
           <View style={styles.cardTall}><Text style={styles.cardText}>Clara</Text></View>
+          <View style={styles.cardSmall}><Text style={styles.cardText}>Luna</Text></View>
         </View>
 
         {/* Middle Row */}
         <View style={styles.row}>
+          {/* Left Column: Daisy + Hana */}
           <View style={styles.column}>
-            <View className = 'm-3' style={styles.cardStandard}><Text style={styles.cardText}>Daisy</Text></View>
-            <View className = 'mt-4'style={styles.cardStandard}><Text style={styles.cardText}>Holly</Text></View>
+            <View style={styles.cardTall}><Text style={styles.cardText}>Daisy</Text></View>
+            <View style={styles.cardPeek}><Text style={styles.cardText}>Hana</Text></View>
           </View>
 
+          {/* Center: Eva */}
           <View style={styles.cardLongVertical}><Text style={styles.cardText}>Eva</Text></View>
 
+          {/* Right Column: Gina + Isla */}
           <View style={styles.column}>
             <View style={styles.cardStandard}><Text style={styles.cardText}>Gina</Text></View>
-            <View className = 'mt-4'style={styles.cardStandard}><Text style={styles.cardText}>Ivy</Text></View>
+            <View style={styles.cardPeek}><Text style={styles.cardText}>Isla</Text></View>
           </View>
         </View>
       </View>
 
-
-      <TouchableOpacity style={styles.googleButton}>
+      {/* Google Auth Button */}
+      <TouchableOpacity style={styles.googleButton} onPress={handleContinue}>
         <Text style={styles.googleButtonText}>Continue with Google</Text>
       </TouchableOpacity>
+
+      {/* Apple Auth Button */}
       <TouchableOpacity style={styles.appleButton}>
         <Text style={styles.appleButtonText}>Continue with Apple</Text>
       </TouchableOpacity>
@@ -56,12 +66,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 20,
     padding: 15,
+    height: 430,
+    width: '90%',
+    marginBottom: 30,
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 8,
-    width: '95%',
-    height: 390, 
-    overflow: 'hidden', 
+    transform: [{ scale: 0.95 }],
+    alignSelf: 'center',
+    overflow: 'hidden',
   },
   row: {
     flexDirection: 'row',
@@ -69,7 +82,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   column: {
-    flexDirection: 'column',
     alignItems: 'center',
     marginHorizontal: 5,
   },
@@ -81,15 +93,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 5,
+    marginBottom: 10,
   },
   cardStandard: {
     width: 100,
-    height: 140,
+    height: 160,
     backgroundColor: '#ddd',
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 5,
+    marginBottom: 10,
   },
   cardSmall: {
     width: 80,
@@ -98,7 +112,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginLeft: 5,
   },
   cardLongVertical: {
     width: 120,
@@ -109,15 +123,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 10,
   },
+  cardPeek: {
+    width: 80,
+    height: 80,
+    backgroundColor: '#ccc',
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 5,
+    transform: [{ translateY: 30 }],
+  },
   cardText: {
     fontWeight: 'bold',
     fontSize: 16,
   },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 50,
-    marginTop: 50
+    marginBottom: 20,
   },
   googleButton: {
     backgroundColor: '#fff',

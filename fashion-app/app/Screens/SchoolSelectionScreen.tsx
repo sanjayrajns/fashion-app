@@ -50,7 +50,6 @@ export default function SchoolSelectionScreen() {
   const filteredSchools = schoolOptions.filter((school) =>
     school.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
   return (
     <SafeAreaView className="flex-1 bg-white px-4 pt-20 pb-4">
       <KeyboardAvoidingView
@@ -109,7 +108,7 @@ export default function SchoolSelectionScreen() {
       </KeyboardAvoidingView>
       <TouchableOpacity
         disabled={!selectedSchool}
-        onPress={() => router.push("/(tabs)/MeasurementsScreen")}
+        onPress={() => router.push("/Screens/MeasurementsScreen")}
         className={`py-4 rounded-lg items-center ${
           selectedSchool ? "bg-black" : "bg-gray-300"
         }`}

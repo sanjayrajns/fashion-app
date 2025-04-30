@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
 import { useRouter } from "expo-router";
 
+
 const priceRanges = [
   "$0-50",
   "$50-100",
@@ -10,6 +11,10 @@ const priceRanges = [
   "$300-500",
   "$500+"
 ];
+
+
+
+
 
 export default function PricePreferencesScreen() {
   const [selected, setSelected] = useState<string | null>(null);
@@ -50,7 +55,7 @@ export default function PricePreferencesScreen() {
         }`}
         style={{ marginTop: 50 }}
         disabled={!selected}
-        onPress={() => router.push("/(tabs)/SchoolSelectionScreen")}
+        onPress={() => router.push("/Screens/SchoolSelectionScreen")}
       >
         <Text className="text-white text-xl text-center font-semibold">Continue</Text>
       </TouchableOpacity>
